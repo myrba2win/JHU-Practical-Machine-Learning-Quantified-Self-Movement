@@ -446,55 +446,17 @@ The data for this project comes from this original source: <a href="http://group
 <h2>Reproducibility</h2>
 <p>In order to reproduce the same results, you need a certain set of packages as well as setting a pseudo random seed equal to the one I have used.<br />
 <code>Note</code>: To install, for instance, the <code>rattle</code> package in R, run this command: <code>install.packages(&quot;rattle&quot;)</code>.<br />
-The following Libraries were used for this project, which you should install and load them in your working environment.</p>
-<pre class="r"><code>library(rattle)</code></pre>
-<pre><code>## Loading required package: tibble</code></pre>
-<pre><code>## Loading required package: bitops</code></pre>
-<pre><code>## Rattle: A free graphical interface for data science with R.
-## Versión 5.4.0 Copyright (c) 2006-2020 Togaware Pty Ltd.
-## Escriba &#39;rattle()&#39; para agitar, sacudir y  rotar sus datos.</code></pre>
-<pre class="r"><code>library(caret)</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre class="r"><code>library(rpart)
-library(rpart.plot)
-library(corrplot)</code></pre>
-<pre><code>## corrplot 0.84 loaded</code></pre>
-<pre class="r"><code>library(randomForest)</code></pre>
-<pre><code>## randomForest 4.6-14</code></pre>
-<pre><code>## Type rfNews() to see new features/changes/bug fixes.</code></pre>
-<pre><code>## 
-## Attaching package: &#39;randomForest&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     margin</code></pre>
-<pre><code>## The following object is masked from &#39;package:rattle&#39;:
-## 
-##     importance</code></pre>
-<pre class="r"><code>library(RColorBrewer)</code></pre>
-<p>Finally, load the same seed with the following line of code:</p>
-<pre class="r"><code>set.seed(56789)</code></pre>
+The following Libraries were used for this project, which you should install and load them in your working environment.<br />
+<code>{r warning=FALSE, error=FALSE} library(rattle) library(caret) library(rpart) library(rpart.plot) library(corrplot) library(randomForest) library(RColorBrewer)</code><br />
+Finally, load the same seed with the following line of code:<br />
+<code>{r warning=FALSE, error=FALSE} set.seed(56789)</code></p>
 </div>
 <div id="getting-data" class="section level2">
 <h2>Getting Data</h2>
-<p>First of all, set your current working directory.</p>
-<pre class="r"><code>#setwd(&quot;~/JHU/Practical Machine Learning/JHU-Practical-Machine-Learning-Quantified-Self-Movement&quot;)</code></pre>
-<p>The following code fragment downloads the dataset to the <code>data</code> folder in the current working directory.</p>
-<pre class="r"><code>trainUrl &lt;-&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;
-testUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;
-trainFile &lt;- &quot;./data/pml-training.csv&quot;
-testFile  &lt;- &quot;./data/pml-testing.csv&quot;
-if (!file.exists(&quot;./data&quot;)) {
-  dir.create(&quot;./data&quot;)
-}
-if (!file.exists(trainFile)) {
-  download.file(trainUrl, destfile = trainFile, method = &quot;curl&quot;)
-}
-if (!file.exists(testFile)) {
-  download.file(testUrl, destfile = testFile, method = &quot;curl&quot;)
-}
-rm(trainUrl)
-rm(testUrl)</code></pre>
+<p>First of all, set your current working directory.<br />
+<code>{r warning=FALSE, error=FALSE} #setwd(&quot;~/JHU/Practical Machine Learning/JHU-Practical-Machine-Learning-Quantified-Self-Movement&quot;)</code></p>
+<p>The following code fragment downloads the dataset to the <code>data</code> folder in the current working directory.<br />
+<code>{r warning=FALSE, error=FALSE} trainUrl &lt;-&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot; testUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot; trainFile &lt;- &quot;./data/pml-training.csv&quot; testFile  &lt;- &quot;./data/pml-testing.csv&quot; if (!file.exists(&quot;./data&quot;)) {   dir.create(&quot;./data&quot;) } if (!file.exists(trainFile)) {   download.file(trainUrl, destfile = trainFile, method = &quot;curl&quot;) } if (!file.exists(testFile)) {   download.file(testUrl, destfile = testFile, method = &quot;curl&quot;) } rm(trainUrl) rm(testUrl)</code></p>
 </div>
 
 
